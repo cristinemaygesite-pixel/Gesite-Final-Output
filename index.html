@@ -2,510 +2,998 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bags & Accessories</title>
 
-    <title>Bags & Accessories Store</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+:root {
+    --blue: #173b63;
+    --light-blue: #eaf4ff;
+    --white: #ffffff;
+    --dark: #202b38;
+    --gray: #64748b;
+    --border: #dbe4ee;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body {
+    background: #f5f8fc;
+    color: var(--dark);
+    line-height: 1.6;
+}
 
-        body {
-            background: #f4f7fb;
-            color: #263445;
-        }
+header {
+    background: var(--blue);
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
 
-        header {
-            background: #142b4a;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
 
-        header h2 {
-            font-size: 21px;
-        }
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
 
-        nav a:hover {
-            color: #65c8ff;
-        }
+nav a:hover {
+    color: #b9dcff;
+}
 
-        .hero {
-            background: linear-gradient(135deg, #142b4a, #2476bd);
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
+.hero {
+    background: linear-gradient(120deg, #173b63, #367bb5);
+    color: white;
+    text-align: center;
+    padding: 85px 20px;
+}
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
+.hero h1 {
+    font-size: clamp(28px, 5vw, 45px);
+    margin-bottom: 15px;
+}
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.8;
-            color: #e3efff;
-        }
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #e4efff;
+}
 
-        .hero-buttons {
-            margin-top: 30px;
-        }
+.hero-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: white;
+    color: var(--blue);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 13px 25px;
-            margin: 7px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-            background: white;
-            color: #142b4a;
-        }
+.container {
+    width: 86%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        .btn:hover {
-            background: #65c8ff;
-        }
+section {
+    padding: 65px 0;
+}
 
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
+.section-title {
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--blue);
+    font-size: 29px;
+}
 
-        section {
-            padding: 65px 8%;
-        }
+.section-description {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 35px;
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 15px;
-            color: #142b4a;
-        }
+.brand-grid,
+.feature-grid,
+.product-grid,
+.structure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
 
-        .section-description {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 35px;
-            line-height: 1.7;
-            color: #65758a;
-        }
+.brand-card {
+    background: white;
+    padding: 30px 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.2s;
+}
 
-        .about {
-            background: white;
-        }
+.brand-card:hover,
+.feature-card:hover,
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(23, 59, 99, 0.10);
+}
 
-        .about-content {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-            line-height: 1.9;
-        }
+.brand-card h3 {
+    color: var(--blue);
+    font-size: 23px;
+    letter-spacing: 1px;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+.brand-card p {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 8px;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            transition: 0.3s;
-        }
+.feature-card,
+.structure-card {
+    background: white;
+    padding: 23px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
-        }
+.feature-number {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--blue);
+    padding: 5px 11px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
 
-        .card h3 {
-            color: #2476bd;
-            margin-bottom: 12px;
-        }
+.feature-card h3,
+.structure-card h3 {
+    color: var(--blue);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
 
-        .card p {
-            color: #65758a;
-            line-height: 1.7;
-            font-size: 14px;
-        }
+.feature-card p,
+.structure-card p {
+    color: var(--gray);
+    font-size: 14px;
+}
 
-        .number {
-            font-size: 30px;
-            margin-bottom: 12px;
-        }
+.catalog {
+    background: var(--light-blue);
+}
 
-        .brands {
-            background: white;
-        }
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
 
-        .brand-card {
-            text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-            color: #142b4a;
-        }
+.controls input,
+.controls select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    min-width: 180px;
+    background: white;
+    font-size: 14px;
+}
 
-        .brand-card p {
-            margin-top: 10px;
-            font-size: 13px;
-            font-weight: normal;
-        }
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: 0.2s;
+}
 
-        .files {
-            background: #142b4a;
-            color: white;
-            text-align: center;
-        }
+.product-placeholder {
+    height: 145px;
+    background: linear-gradient(135deg, #dceeff, #f5f9ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+}
 
-        .files .section-title {
-            color: white;
-        }
+.product-info {
+    padding: 18px;
+}
 
-        .files .section-description {
-            color: #d5e5f7;
-        }
+.product-info h3 {
+    color: var(--blue);
+    margin-bottom: 5px;
+}
 
-        footer {
-            background: #0c1b30;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            font-size: 13px;
-            line-height: 1.8;
-        }
+.product-info p {
+    color: var(--gray);
+    font-size: 13px;
+}
 
-        @media (max-width: 650px) {
-            header {
-                justify-content: center;
-                text-align: center;
-            }
+.product-price {
+    color: #167347;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 12px 0;
+}
 
-            nav a {
-                display: inline-block;
-                margin: 8px;
-            }
+.stock {
+    margin-bottom: 12px;
+}
 
-            .hero h1 {
-                font-size: 30px;
-            }
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-weight: bold;
+}
 
-            section {
-                padding: 45px 6%;
-            }
-        }
-    </style>
+.add-button,
+.primary-button {
+    background: var(--blue);
+    color: white;
+}
+
+.add-button:hover,
+.primary-button:hover {
+    background: #285c91;
+}
+
+.secondary-button {
+    background: #e2e8f0;
+    color: var(--dark);
+}
+
+.cart-section {
+    background: white;
+}
+
+.cart-box {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 21px;
+    font-weight: bold;
+    color: var(--blue);
+    margin-top: 20px;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.about-box {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+}
+
+.about-box p {
+    color: var(--gray);
+}
+
+footer {
+    background: var(--blue);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 13px;
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--gray);
+    padding: 25px;
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 650px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding: 60px 18px;
+    }
+
+    .cart-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h2>BAGS & ACCESSORIES STORE</h2>
+<!-- HEADER -->
+<header>
+    <div class="logo">BAGS & ACCESSORIES STORE</div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="#brands">Brands</a>
-            <a href="#files">Project Files</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#brands">Brands</a>
+        <a href="#catalog">Catalog</a>
+        <a href="#features">Features</a>
+        <a href="#cart">Shopping Cart</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
 
-    <!-- HOME -->
-    <div class="hero" id="home">
-
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="container">
         <h1>BAGS & ACCESSORIES STORE</h1>
-
+        <h2>E-COMMERCE INVENTORY & SEARCH SYSTEM</h2>
         <p>
-            E-Commerce Inventory & Search System
-
-            A C++ inventory management system designed
-            to organize products, manage stock, search
-            items, and process customer orders using
-            Data Structures and Algorithms.
+            Explore our product catalog, browse official partner brands,
+            search for products, and manage your shopping cart.
         </p>
-
-        <div class="hero-buttons">
-            <a href="#features" class="btn">
-                Explore Features
-            </a>
-
-            <a href="#about" class="btn btn-outline">
-                Learn More
-            </a>
-        </div>
-
+        <a href="#catalog" class="hero-button">Explore Products</a>
     </div>
+</section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-
-        <h2 class="section-title">About the Project</h2>
-
+<!-- PARTNER BRANDS -->
+<section id="brands">
+    <div class="container">
+        <h2 class="section-title">OUR PARTNER BRANDS</h2>
         <p class="section-description">
-            Understanding our inventory management system.
+            Discover our four official partner brands.
         </p>
 
-        <div class="about-content">
+        <div class="brand-grid">
 
-            <p>
-                The Bags & Accessories Store – E-Commerce
-                Inventory & Search System is a console-based
-                C++ application developed to manage a
-                collection of bags and accessories from
-                different partner brands.
-            </p>
-
-            <br>
-
-            <p>
-                The system provides product management,
-                inventory searching, brand filtering,
-                shopping cart operations, customer checkout,
-                sorting, and undo functionality.
-                It applies different Data Structures and
-                Algorithms to organize and process information.
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- FEATURES -->
-    <section id="features">
-
-        <h2 class="section-title">System Features</h2>
-
-        <p class="section-description">
-            Explore the main features of the inventory
-            and search management system.
-        </p>
-
-        <div class="grid">
-
-            <div class="card">
-                <div class="number">01</div>
-                <h3>Complete Catalog</h3>
-                <p>View all available bags and accessories
-                with their product information.</p>
+            <div class="brand-card">
+                <h3>HERSCHEL</h3>
+                <p>Classic Design - Travel and Everyday Bags</p>
             </div>
 
-            <div class="card">
-                <div class="number">02</div>
-                <h3>Brand Filtering</h3>
-                <p>Filter products according to their
-                official partner brands.</p>
+            <div class="brand-card">
+                <h3>ANELLO</h3>
+                <p>Smart Style - Everyday Bags and Accessories</p>
             </div>
 
-            <div class="card">
-                <div class="number">03</div>
-                <h3>Keyword Search</h3>
-                <p>Find products using their names
-                and keywords.</p>
+            <div class="brand-card">
+                <h3>GUESS</h3>
+                <p>Iconic Style - Fashion Bags and Accessories</p>
             </div>
 
-            <div class="card">
-                <div class="number">04</div>
-                <h3>Price Range Filter</h3>
-                <p>Find products based on a selected
-                price range in Philippine pesos.</p>
-            </div>
-
-            <div class="card">
-                <div class="number">05</div>
-                <h3>Shopping Cart</h3>
-                <p>Add selected products to the
-                customer shopping cart.</p>
-            </div>
-
-            <div class="card">
-                <div class="number">06</div>
-                <h3>Checkout Queue</h3>
-                <p>Process customer orders using
-                a queue data structure.</p>
-            </div>
-
-            <div class="card">
-                <div class="number">07</div>
-                <h3>Undo Action</h3>
-                <p>Use the stack to manage and
-                reverse supported admin actions.</p>
-            </div>
-
-            <div class="card">
-                <div class="number">08</div>
-                <h3>Brand Showcase</h3>
-                <p>Display the official partner
-                brands of the store.</p>
-            </div>
-
-            <div class="card">
-                <div class="number">09</div>
-                <h3>Inventory Sorting</h3>
-                <p>Organize products according to
-                their prices.</p>
-            </div>
-
-            <div class="card">
-                <div class="number">10</div>
-                <h3>Exit System</h3>
-                <p>Safely exit the inventory
-                management application.</p>
+            <div class="brand-card">
+                <h3>JANSPORT</h3>
+                <p>Always With You - Backpacks and Daily Carry</p>
             </div>
 
         </div>
+    </div>
+</section>
 
-    </section>
-
-    <!-- BRANDS -->
-    <section class="brands" id="brands">
-
-        <h2 class="section-title">Our Partner Brands</h2>
-
+<!-- PRODUCT CATALOG -->
+<section class="catalog" id="catalog">
+    <div class="container">
+        <h2 class="section-title">COMPLETE PRODUCT CATALOG</h2>
         <p class="section-description">
-            Explore the brands featured in our
-            Bags & Accessories Store.
+            Browse products and filter them by brand or keyword.
         </p>
 
-        <div class="grid">
+        <div class="controls">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search product, category, or brand..."
+                oninput="displayProducts()"
+            >
 
-            <div class="card brand-card">
-                NIKE
-                <p>Sports and Lifestyle</p>
+            <select id="brandFilter" onchange="displayProducts()">
+                <option value="All">All Partner Brands</option>
+                <option value="Herschel">Herschel</option>
+                <option value="Anello">Anello</option>
+                <option value="Guess">Guess</option>
+                <option value="Jansport">Jansport</option>
+            </select>
+
+            <input
+                type="number"
+                id="minPrice"
+                placeholder="Minimum price (PHP)"
+                min="0"
+                oninput="displayProducts()"
+            >
+
+            <input
+                type="number"
+                id="maxPrice"
+                placeholder="Maximum price (PHP)"
+                min="0"
+                oninput="displayProducts()"
+            >
+
+            <select id="sortOption" onchange="displayProducts()">
+                <option value="default">Default Order</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="stock">Stock: High to Low</option>
+                <option value="brand">Brand: A to Z</option>
+            </select>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+    </div>
+</section>
+
+<!-- MAIN MENU FEATURES -->
+<section id="features">
+    <div class="container">
+        <h2 class="section-title">SYSTEM FEATURES</h2>
+        <p class="section-description">
+            The 10 main features of the C++ inventory and search system.
+        </p>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <span class="feature-number">01</span>
+                <h3>View Complete Catalog</h3>
+                <p>Display all available products with their details.</p>
             </div>
 
-            <div class="card brand-card">
-                ADIDAS
-                <p>Sports and Accessories</p>
+            <div class="feature-card">
+                <span class="feature-number">02</span>
+                <h3>Filter Products by Official Brand</h3>
+                <p>Find products from Herschel, Anello, Guess, and Jansport.</p>
             </div>
 
-            <div class="card brand-card">
-                HERSCHEL
-                <p>Bags and Backpacks</p>
+            <div class="feature-card">
+                <span class="feature-number">03</span>
+                <h3>Search Products by Keyword</h3>
+                <p>Search using product name, category, or brand.</p>
             </div>
 
-            <div class="card brand-card">
-                JANSPORT
-                <p>Backpacks and Bags</p>
+            <div class="feature-card">
+                <span class="feature-number">04</span>
+                <h3>Filter Products by Price Range</h3>
+                <p>Find products within your selected price range.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-number">05</span>
+                <h3>Add Item to Shopping Cart</h3>
+                <p>Select products and add them to your shopping cart.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-number">06</span>
+                <h3>Process Customer Checkout Queue</h3>
+                <p>Demonstrate first-in, first-out checkout processing.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-number">07</span>
+                <h3>Perform Admin Undo Action</h3>
+                <p>Demonstrate undo functionality using a stack.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-number">08</span>
+                <h3>Display Partner Brand Banner Showcase</h3>
+                <p>Present the four official partner brands.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-number">09</span>
+                <h3>Sort Inventory Display</h3>
+                <p>Arrange products by price, stock, or brand.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-number">10</span>
+                <h3>Exit</h3>
+                <p>Finish using the inventory and search system.</p>
             </div>
 
         </div>
+    </div>
+</section>
 
-    </section>
-
-    <!-- DATA STRUCTURES -->
-    <section id="technology">
-
-        <h2 class="section-title">
-            Data Structures & Algorithms
-        </h2>
-
+<!-- DATA STRUCTURES -->
+<section>
+    <div class="container">
+        <h2 class="section-title">DATA STRUCTURES & ALGORITHMS</h2>
         <p class="section-description">
-            The project demonstrates the application
-            of different data structures and algorithms.
+            Data structures and algorithms used in the C++ project.
         </p>
 
-        <div class="grid">
+        <div class="structure-grid">
 
-            <div class="card">
-                <h3>Linked List</h3>
-                <p>Manages and organizes product records.</p>
+            <div class="structure-card">
+                <h3>Vector</h3>
+                <p>Stores the product inventory.</p>
             </div>
 
-            <div class="card">
-                <h3>Stack</h3>
-                <p>Maintains admin action history for undo operations.</p>
+            <div class="structure-card">
+                <h3>Doubly Linked List</h3>
+                <p>Manages shopping cart items.</p>
             </div>
 
-            <div class="card">
+            <div class="structure-card">
                 <h3>Queue</h3>
-                <p>Processes customer checkout orders.</p>
+                <p>Processes customer checkout using FIFO.</p>
             </div>
 
-            <div class="card">
+            <div class="structure-card">
+                <h3>Stack</h3>
+                <p>Manages administrative undo actions using LIFO.</p>
+            </div>
+
+            <div class="structure-card">
+                <h3>Circular Linked List</h3>
+                <p>Displays the partner brand showcase.</p>
+            </div>
+
+            <div class="structure-card">
                 <h3>Binary Search Tree</h3>
-                <p>Supports product searching through product IDs.</p>
+                <p>Organizes products using their IDs.</p>
             </div>
 
-            <div class="card">
-                <h3>Searching</h3>
-                <p>Locates products using keywords and IDs.</p>
+            <div class="structure-card">
+                <h3>Linear Search</h3>
+                <p>Searches products using keywords.</p>
             </div>
 
-            <div class="card">
-                <h3>Sorting</h3>
-                <p>Organizes inventory according to product prices.</p>
+            <div class="structure-card">
+                <h3>Binary Search</h3>
+                <p>Finds products within a sorted price range.</p>
+            </div>
+
+            <div class="structure-card">
+                <h3>Insertion Sort</h3>
+                <p>Sorts products by price or stock quantity.</p>
+            </div>
+
+            <div class="structure-card">
+                <h3>Quick Sort</h3>
+                <p>Sorts products by brand name.</p>
             </div>
 
         </div>
+    </div>
+</section>
 
-    </section>
-
-    <!-- PROJECT FILES -->
-    <section class="files" id="files">
-
-        <h2 class="section-title">Project Files</h2>
-
+<!-- SHOPPING CART -->
+<section class="cart-section" id="cart">
+    <div class="container">
+        <h2 class="section-title">SHOPPING CART</h2>
         <p class="section-description">
-            Access the source code and documentation
-            of the Bags & Accessories Store System.
+            Review the products you have selected.
         </p>
 
-        <a href="main.cpp" class="btn" download>
-            Download C++ Source Code
-        </a>
+        <div class="cart-box">
+            <div id="cartItems">
+                <p class="empty-message">Your shopping cart is empty.</p>
+            </div>
 
-        <a href="README.md" class="btn btn-outline">
-            View README
-        </a>
+            <div class="cart-total" id="cartTotal">
+                Total: PHP 0.00
+            </div>
 
-    </section>
+            <div class="cart-actions">
+                <button class="secondary-button" onclick="clearCart()">
+                    Clear Cart
+                </button>
 
-    <!-- FOOTER -->
-    <footer>
+                <button class="primary-button" onclick="checkout()">
+                    Process Checkout
+                </button>
+            </div>
 
-        <p>
-            BAGS & ACCESSORIES STORE
-            <br>
-            E-Commerce Inventory & Search System
-        </p>
+            <p id="checkoutMessage" style="margin-top:15px;color:#167347;text-align:right;"></p>
+        </div>
+    </div>
+</section>
 
-        <p>
-            Developed as a Data Structures
-            and Algorithms Final Project.
-        </p>
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">ABOUT OUR SYSTEM</h2>
 
-        <p>
-            © 2026 Bags & Accessories Store
-        </p>
+        <div class="about-box">
+            <p>
+                The Bags & Accessories Store E-Commerce Inventory & Search
+                System is a C++ project that demonstrates the use of
+                data structures and algorithms for product inventory
+                management, searching, sorting, shopping cart operations,
+                checkout processing, and brand showcasing.
+            </p>
 
-    </footer>
+            <p style="margin-top:15px;">
+                Our official partner brands are
+                <strong>Herschel, Anello, Guess, and Jansport.</strong>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p><strong>BAGS & ACCESSORIES STORE</strong></p>
+    <p>E-Commerce Inventory & Search System</p>
+    <p>Partner Brands: Herschel | Anello | Guess | Jansport</p>
+    <p style="margin-top:10px;">© 2026 Bags & Accessories Store. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// PRODUCT INVENTORY
+const products = [
+    {
+        id: 1001,
+        name: "Classic Backpack",
+        category: "Backpack",
+        brand: "Herschel",
+        price: 1899.00,
+        stock: 12
+    },
+    {
+        id: 1002,
+        name: "Mini Backpack",
+        category: "Backpack",
+        brand: "Anello",
+        price: 1499.00,
+        stock: 10
+    },
+    {
+        id: 1003,
+        name: "School Backpack",
+        category: "Backpack",
+        brand: "Jansport",
+        price: 1299.00,
+        stock: 15
+    },
+    {
+        id: 1004,
+        name: "Logo Shoulder Bag",
+        category: "Shoulder Bag",
+        brand: "Guess",
+        price: 2299.00,
+        stock: 7
+    },
+    {
+        id: 1005,
+        name: "Travel Tote Bag",
+        category: "Tote Bag",
+        brand: "Herschel",
+        price: 999.00,
+        stock: 9
+    },
+    {
+        id: 1006,
+        name: "Crossbody Bag",
+        category: "Crossbody",
+        brand: "Guess",
+        price: 1799.00,
+        stock: 6
+    },
+    {
+        id: 1007,
+        name: "Canvas Tote",
+        category: "Tote Bag",
+        brand: "Anello",
+        price: 799.00,
+        stock: 14
+    },
+    {
+        id: 1008,
+        name: "Laptop Backpack",
+        category: "Backpack",
+        brand: "Jansport",
+        price: 1599.00,
+        stock: 8
+    }
+];
+
+// SHOPPING CART
+let cart = [];
+
+function formatPrice(price) {
+    return "PHP " + price.toLocaleString("en-PH", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+// DISPLAY PRODUCTS
+function displayProducts() {
+
+    const grid = document.getElementById("productGrid");
+    const search = document.getElementById("searchInput").value.toLowerCase();
+    const brand = document.getElementById("brandFilter").value;
+
+    const minValue = document.getElementById("minPrice").value;
+    const maxValue = document.getElementById("maxPrice").value;
+
+    const min = minValue === "" ? 0 : Number(minValue);
+    const max = maxValue === "" ? Infinity : Number(maxValue);
+
+    const sort = document.getElementById("sortOption").value;
+
+    let filtered = products.filter(product => {
+
+        const matchesSearch =
+            product.name.toLowerCase().includes(search) ||
+            product.category.toLowerCase().includes(search) ||
+            product.brand.toLowerCase().includes(search);
+
+        const matchesBrand =
+            brand === "All" || product.brand === brand;
+
+        const matchesPrice =
+            product.price >= min && product.price <= max;
+
+        return matchesSearch && matchesBrand && matchesPrice;
+    });
+
+    if (sort === "low") {
+        filtered.sort((a, b) => a.price - b.price);
+    }
+
+    if (sort === "high") {
+        filtered.sort((a, b) => b.price - a.price);
+    }
+
+    if (sort === "stock") {
+        filtered.sort((a, b) => b.stock - a.stock);
+    }
+
+    if (sort === "brand") {
+        filtered.sort((a, b) => a.brand.localeCompare(b.brand));
+    }
+
+    grid.innerHTML = "";
+
+    if (filtered.length === 0) {
+        grid.innerHTML =
+            '<p class="empty-message">No products found.</p>';
+        return;
+    }
+
+    filtered.forEach(product => {
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        card.innerHTML = `
+            <div class="product-placeholder">🎒</div>
+
+            <div class="product-info">
+                <h3>${product.name}</h3>
+
+                <p>Product ID: ${product.id}</p>
+                <p>Category: ${product.category}</p>
+                <p>Brand: ${product.brand}</p>
+
+                <div class="product-price">
+                    ${formatPrice(product.price)}
+                </div>
+
+                <p class="stock">
+                    Available Stock: ${product.stock}
+                </p>
+
+                <button class="add-button"
+                    onclick="addToCart(${product.id})"
+                    ${product.stock <= 0 ? "disabled" : ""}>
+                    Add to Shopping Cart
+                </button>
+            </div>
+        `;
+
+        grid.appendChild(card);
+    });
+}
+
+// ADD ITEM TO CART
+function addToCart(id) {
+
+    const product = products.find(p => p.id === id);
+
+    if (!product || product.stock <= 0) {
+        alert("Product is out of stock.");
+        return;
+    }
+
+    const existing = cart.find(item => item.id === id);
+
+    if (existing) {
+
+        if (existing.quantity >= product.stock) {
+            alert("Requested quantity exceeds available stock.");
+            return;
+        }
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+            id: product.id,
+            name: product.name,
+            brand: product.brand,
+            price: product.price,
+            quantity: 1
+        });
+    }
+
+    displayCart();
+    alert(product.name + " added to your cart!");
+}
+
+// DISPLAY CART
+function displayCart() {
+
+    const cartItems = document.getElementById("cartItems");
+    const cartTotal = document.getElementById("cartTotal");
+
+    cartItems.innerHTML = "";
+
+    if (cart.length === 0) {
+        cartItems.innerHTML =
+            '<p class="empty-message">Your shopping cart is empty.</p>';
+
+        cartTotal.textContent = "Total: PHP 0.00";
+        return;
+    }
+
+    let total = 0;
+
+    cart.forEach(item => {
+
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        const row = document.createElement("div");
+        row.className = "cart-item";
+
+        row.innerHTML = `
+            <div>
+                <strong>${item.name}</strong>
+                <p>${item.brand}</p>
+                <p>Quantity: ${item.quantity}</p>
+                <p>Subtotal: ${formatPrice(subtotal)}</p>
+            </div>
+
+            <button class="secondary-button"
+                onclick="removeFromCart(${item.id})">
+                Remove
+            </button>
+        `;
+
+        cartItems.appendChild(row);
+    });
+
+    cartTotal.textContent = "Total: " + formatPrice(total);
+}
+
+// REMOVE CART ITEM
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    displayCart();
+}
+
+// CLEAR CART
+function clearCart() {
+
+    if (cart.length === 0) {
+        alert("Your shopping cart is already empty.");
+        return;
+    }
+
+    cart = [];
+    displayCart();
+
+    document.getElementById("checkoutMessage").textContent = "";
+}
+
+// CHECKOUT
+function checkout() {
+
+    if (cart.length === 0) {
+        alert("Your shopping cart is empty.");
+        return;
+    }
+
+    let total = 0;
+
+    for (const item of cart) {
+
+        const product = products.find(p => p.id === item.id);
+
+        if (!product || product.stock < item.quantity) {
+            alert("Not enough stock for " + item.name);
+            return;
+        }
+
+        total += item.price * item.quantity;
+    }
+
+    for (const item of cart) {
+        const product = products.find(p => p.id === item.id);
+        product.stock -= item.quantity;
+    }
+
+    cart = [];
+
+    displayCart();
+    displayProducts();
+
+    document.getElementById("checkoutMessage").textContent =
+        "Checkout completed! Total: " + formatPrice(total);
+
+    alert("Checkout completed successfully!");
+}
+
+// INITIAL DISPLAY
+displayProducts();
+displayCart();
+
+</script>
 
 </body>
 </html>
