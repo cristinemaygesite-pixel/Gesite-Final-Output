@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bags & Accessories Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #263445;
+        }
+
+        header {
+            background: #142b4a;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            font-size: 21px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #65c8ff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #142b4a, #2476bd);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+            color: #e3efff;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 7px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            background: white;
+            color: #142b4a;
+        }
+
+        .btn:hover {
+            background: #65c8ff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #142b4a;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 35px;
+            line-height: 1.7;
+            color: #65758a;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+        }
+
+        .card h3 {
+            color: #2476bd;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #65758a;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .number {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .brands {
+            background: white;
+        }
+
+        .brand-card {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #142b4a;
+        }
+
+        .brand-card p {
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .files {
+            background: #142b4a;
+            color: white;
+            text-align: center;
+        }
+
+        .files .section-title {
+            color: white;
+        }
+
+        .files .section-description {
+            color: #d5e5f7;
+        }
+
+        footer {
+            background: #0c1b30;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            section {
+                padding: 45px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h2>BAGS & ACCESSORIES STORE</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#brands">Brands</a>
+            <a href="#files">Project Files</a>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <div class="hero" id="home">
+
+        <h1>BAGS & ACCESSORIES STORE</h1>
+
+        <p>
+            E-Commerce Inventory & Search System
+
+            A C++ inventory management system designed
+            to organize products, manage stock, search
+            items, and process customer orders using
+            Data Structures and Algorithms.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#features" class="btn">
+                Explore Features
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+                Learn More
+            </a>
+        </div>
+
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2 class="section-title">About the Project</h2>
+
+        <p class="section-description">
+            Understanding our inventory management system.
+        </p>
+
+        <div class="about-content">
+
+            <p>
+                The Bags & Accessories Store – E-Commerce
+                Inventory & Search System is a console-based
+                C++ application developed to manage a
+                collection of bags and accessories from
+                different partner brands.
+            </p>
+
+            <br>
+
+            <p>
+                The system provides product management,
+                inventory searching, brand filtering,
+                shopping cart operations, customer checkout,
+                sorting, and undo functionality.
+                It applies different Data Structures and
+                Algorithms to organize and process information.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+
+        <h2 class="section-title">System Features</h2>
+
+        <p class="section-description">
+            Explore the main features of the inventory
+            and search management system.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="number">01</div>
+                <h3>Complete Catalog</h3>
+                <p>View all available bags and accessories
+                with their product information.</p>
+            </div>
+
+            <div class="card">
+                <div class="number">02</div>
+                <h3>Brand Filtering</h3>
+                <p>Filter products according to their
+                official partner brands.</p>
+            </div>
+
+            <div class="card">
+                <div class="number">03</div>
+                <h3>Keyword Search</h3>
+                <p>Find products using their names
+                and keywords.</p>
+            </div>
+
+            <div class="card">
+                <div class="number">04</div>
+                <h3>Price Range Filter</h3>
+                <p>Find products based on a selected
+                price range in Philippine pesos.</p>
+            </div>
+
+            <div class="card">
+                <div class="number">05</div>
+                <h3>Shopping Cart</h3>
+                <p>Add selected products to the
+                customer shopping cart.</p>
+            </div>
+
+            <div class="card">
+                <div class="number">06</div>
+                <h3>Checkout Queue</h3>
+                <p>Process customer orders using
+                a queue data structure.</p>
+            </div>
+
+            <div class="card">
+                <div class="number">07</div>
+                <h3>Undo Action</h3>
+                <p>Use the stack to manage and
+                reverse supported admin actions.</p>
+            </div>
+
+            <div class="card">
+                <div class="number">08</div>
+                <h3>Brand Showcase</h3>
+                <p>Display the official partner
+                brands of the store.</p>
+            </div>
+
+            <div class="card">
+                <div class="number">09</div>
+                <h3>Inventory Sorting</h3>
+                <p>Organize products according to
+                their prices.</p>
+            </div>
+
+            <div class="card">
+                <div class="number">10</div>
+                <h3>Exit System</h3>
+                <p>Safely exit the inventory
+                management application.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BRANDS -->
+    <section class="brands" id="brands">
+
+        <h2 class="section-title">Our Partner Brands</h2>
+
+        <p class="section-description">
+            Explore the brands featured in our
+            Bags & Accessories Store.
+        </p>
+
+        <div class="grid">
+
+            <div class="card brand-card">
+                NIKE
+                <p>Sports and Lifestyle</p>
+            </div>
+
+            <div class="card brand-card">
+                ADIDAS
+                <p>Sports and Accessories</p>
+            </div>
+
+            <div class="card brand-card">
+                HERSCHEL
+                <p>Bags and Backpacks</p>
+            </div>
+
+            <div class="card brand-card">
+                JANSPORT
+                <p>Backpacks and Bags</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DATA STRUCTURES -->
+    <section id="technology">
+
+        <h2 class="section-title">
+            Data Structures & Algorithms
+        </h2>
+
+        <p class="section-description">
+            The project demonstrates the application
+            of different data structures and algorithms.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Linked List</h3>
+                <p>Manages and organizes product records.</p>
+            </div>
+
+            <div class="card">
+                <h3>Stack</h3>
+                <p>Maintains admin action history for undo operations.</p>
+            </div>
+
+            <div class="card">
+                <h3>Queue</h3>
+                <p>Processes customer checkout orders.</p>
+            </div>
+
+            <div class="card">
+                <h3>Binary Search Tree</h3>
+                <p>Supports product searching through product IDs.</p>
+            </div>
+
+            <div class="card">
+                <h3>Searching</h3>
+                <p>Locates products using keywords and IDs.</p>
+            </div>
+
+            <div class="card">
+                <h3>Sorting</h3>
+                <p>Organizes inventory according to product prices.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECT FILES -->
+    <section class="files" id="files">
+
+        <h2 class="section-title">Project Files</h2>
+
+        <p class="section-description">
+            Access the source code and documentation
+            of the Bags & Accessories Store System.
+        </p>
+
+        <a href="main.cpp" class="btn" download>
+            Download C++ Source Code
+        </a>
+
+        <a href="README.md" class="btn btn-outline">
+            View README
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            BAGS & ACCESSORIES STORE
+            <br>
+            E-Commerce Inventory & Search System
+        </p>
+
+        <p>
+            Developed as a Data Structures
+            and Algorithms Final Project.
+        </p>
+
+        <p>
+            © 2026 Bags & Accessories Store
+        </p>
+
+    </footer>
+
+</body>
+</html>
